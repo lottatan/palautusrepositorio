@@ -24,4 +24,4 @@ class PlayerReader:
 
                 players.append(player)
 
-        return 
+        return players
