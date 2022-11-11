@@ -1,4 +1,4 @@
-from kirjanpito import Kirjanpito as default_kirjanpito
+from kirjanpito import kirjanpito as default_kirjanpito
 
 class Pankki:
 
