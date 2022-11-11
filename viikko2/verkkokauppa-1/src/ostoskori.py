@@ -14,3 +14,4 @@ class Ostoskori:
         hinnat = map(lambda t: t.hinta, self._tuotteet)
 
         return sum(hinnat)
+
