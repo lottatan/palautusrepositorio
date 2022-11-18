@@ -6,7 +6,7 @@ Test Setup  Create User And Register Page Should Open
 
 *** Test Cases ***
 Register With Valid Username And password
-    Set Username     kalleeeee
+    Set Username     kallexx
     Set Password     kalle123
     Set Password Confirmation        kalle123
     Submit Credentials 
@@ -33,16 +33,39 @@ Register With Nonmatching Password And Password Confirmation
     Submit Credentials
     Register Should Fail With Message    Passwords don't match
 
+Login After Successful Registration
+    Login Page
+    Set Username  kallexx
+    Set Password  kalle123
+    Submit Login Credentials
+    Login Should Succeed
 
+Login After Failed Registration
+    Login Page
+    Set Username  ka
+    Set Password  kalle123
+    Submit Login Credentials
+    Login Should Fail With Message    Invalid username or password
 
 *** Keywords***
 Register Should Succeed
     Welcome Page Should Be Open
 
+Login Should Succeed
+    Main Page Should Be Open
+
 Register Should Fail With Message
     [Arguments]  ${message}
     Register Page Should Be Open
     Page Should Contain  ${message}
+
+Login Should Fail With Message
+    [Arguments]   ${message}
+    Login Page Should Be Open
+    Page Should Contain   ${message}
+
+Submit Login Credentials
+    Click Button    Login
 
 Submit Credentials
     Click Button  Register
@@ -58,6 +81,10 @@ Set Password
 Set Password Confirmation
     [Arguments]  ${password_confirmation}
     Input Password   password_confirmation   ${password_confirmation}
+
+Login Page
+    Go To Login Page
+    Login Page Should Be Open
 
 Create User And Register Page Should Open
     Go To Register Page
