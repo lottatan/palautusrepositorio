@@ -1,14 +1,16 @@
 from entities.user import User
+import re
 from repositories.user_repository import (
     user_repository as default_user_repository
 )
 
-
 class UserInputError(Exception):
     pass
 
-
 class AuthenticationError(Exception):
+    pass
+
+class NonExistentError(Exception):
     pass
 
 
@@ -22,7 +24,10 @@ class UserService:
 
         user = self._user_repository.find_by_username(username)
 
-        if not user or user.password != password:
+        if not user:
+            raise NonExistentError("Invalid username or password")
+        
+        if user and user.password != password:
             raise AuthenticationError("Invalid username or password")
 
         return user
@@ -38,9 +43,21 @@ class UserService:
 
     def validate(self, username, password, password_confirmation):
         if not username or not password:
-            raise UserInputError("Username and password are required")
+            raise Exception("Username and password are required")
 
-        # toteuta loput tarkastukset tänne ja nosta virhe virhetilanteissa
+        if re.match("^[a-z]+$", username) and len(username) >= 3:
+            print("Ok")
+        else:
+            raise Exception("Virheellinen käyttäjätunnus")
 
+
+        if re.match("^(?=.*[0-9]$)(?=.*[a-zA-Z])", password) and len(password) >= 8:
+            print("Ok")
+        else:
+            raise Exception("Virheellinen salasana")
+        
+        if not password_confirmation or password != password_confirmation:
+            raise Exception("Passwords don't match")
+        
 
 user_service = UserService()
