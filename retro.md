@@ -1,0 +1,5 @@
+Retrospektiivi tarkoittaa tapaamista ryhmän jäsenten kesken, joka järjestetään projektin tai prosessin jälkeen. Tapaamisessa keskustellaan projektin tai prosessin aikaisista onnistumisista ja asioista, mitä olisi voitu parannella, sekä miten näitä ominaisuuksia voitaisiin hyödyntää tulevaisuudessa projektin tai prosessien iteraatioissa.  
+
+Esim. Start, Stop, Continue, More of, Less of Wheel on n. 20-23 minuuttia kestävä retrospektiivi, jota käytetään palautteen hankkimiseen tiimille, jotta voitaisiin oppia, mitä jatkossa jatkaa ja mitä pitää kehittää. Ryhmän fasilitaattori tallentaa avointa palautetta käyttämällä pyörää, joka rohkaisee jäseniä arvoimaan iteraatiota viidessä eri kategoriassa. Jokaisen pyörän vaiheesta keskustellaan ja kehitellään mahdollisia parannusehdotuksia. 
+
+Glad, Sad, Mad on n. tunnin kestävä retrospektiivi, jossa käytännössä tehdään taaksepäinsuuntautuva suunnitelma ilman sen vakavempia aiheita. Glad, Sad, Mad kategorisoi asioita iteraation aikana, mitkä saivat jäsenet tuntemaan iloa, surua ja vihastuneisuutta.  
