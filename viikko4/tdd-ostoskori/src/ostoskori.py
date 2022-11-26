@@ -28,15 +28,12 @@ class Ostoskori:
     def lisaa_tuote(self, lisattava: Tuote):
         if lisattava in self.ostoskori:
             Ostos(lisattava).muuta_lukumaaraa(1)
+            self.ostoskori.append(lisattava)
         if lisattava not in self.ostoskori:
             self.ostoskori.append(lisattava)
 
     def poista_tuote(self, poistettava: Tuote):
-        if poistettava in self.ostoskori:
-            Ostos(poistettava).muuta_lukumaaraa(-1)
-            if Ostos(poistettava).lukumaara() == 0:
-                self.ostoskori.remove(poistettava)
-
+        Ostos(poistettava).muuta_lukumaaraa(-1)
 
     def tyhjenna(self):
         self.ostoskori = []
